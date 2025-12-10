@@ -1,5 +1,11 @@
-package com.example.Repository;
+package com.example.repository;
 
-public interface MenuRepository {
+import com.example.models.Menu;  
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+
+public interface MenuRepository extends JpaRepository<Menu, Integer> {
 
 }
