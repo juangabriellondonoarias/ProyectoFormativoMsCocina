@@ -11,10 +11,10 @@ public class SwaggerConfig {
 	    public OpenAPI customOpenAPI() {
 	        return new OpenAPI()
 	                .info(new Info()
-	                        .title("API de Ingredientes")
+	                        .title("API Modulo Cocina")
 	                        .description("Documentación de la API del módulo de cocina")
 	                        .version("1.0.0")
-	                        .contact(new Contact().name("Tu Nombre").email("correo@example.com"))
+	                        .contact(new Contact().name("Juan Gabriel Londoño").email("juangabriellondonoarias@gmail.com"))
 	                );
 	    }
 }
