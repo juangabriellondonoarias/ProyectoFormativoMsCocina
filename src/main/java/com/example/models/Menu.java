@@ -1,6 +1,6 @@
 package com.example.models;
 
-import jakarta.persistence.Column;
+import jakarta.persistence.Column; 
 import jakarta.persistence.Entity;  
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -8,8 +8,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-/* evito hacer los get y los set simplemente se define lo que son 
- * los parametros  */
 
 @Entity
 
