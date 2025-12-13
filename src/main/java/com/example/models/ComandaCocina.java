@@ -1,6 +1,6 @@
 package com.example.models;
 
-import java.time.LocalDateTime; 
+import java.time.LocalDateTime;   
 
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -31,6 +31,8 @@ public class ComandaCocina {
 	@Column(name = "id_mesa" , nullable = false)
 	private Integer idMesa;
 	
+	
+	
 	 /*mapeo del datetime*/
 	
 	@CreationTimestamp
@@ -38,7 +40,7 @@ public class ComandaCocina {
 	private LocalDateTime horaEntrada;
 	
 	/*mapeo del enum estado*/
-	/* Mapeo del ENUM ESTADO (Faltaba) */
+	/* Mapeo del ENUM ESTADO  */
     @Enumerated(EnumType.STRING)
     @Column(name = "estado", nullable = false)
     private EstadoComanda estado = EstadoComanda.EN_ESPERA; 
@@ -47,6 +49,12 @@ public class ComandaCocina {
 	@Enumerated(EnumType.STRING)
 	@Column(name = "prioridad" , nullable = false) 
 	private PrioridadComanda prioridad = PrioridadComanda.MEDIA;
+	
+	
+	@Column(name = "notas" , length = 200)
+	private String notas;
+	
+	
 	/*conatructor*/
 	
 	public ComandaCocina() {
@@ -55,16 +63,16 @@ public class ComandaCocina {
 	
 	/*get y set*/
 	
-	public Integer getIdPedidoCocina() {
+	public Integer getIdComandaCocina() {
 		return idComandaCocina;
 	}
 	
-	public Integer getIdPedidoRestaurante() {
+	public Integer getIdComandaRestaurante() {
 		return idComandaRestaurante;
 		
 	}
 	
-	public Integer getIdMesa () {
+	public Integer getIdMesa () { 
 		return idMesa;
 	}
 	
@@ -84,11 +92,11 @@ public class ComandaCocina {
 		this.idComandaCocina = idComandaCocina;
 	}
 	
-	public void setIComandaRestaurante(Integer idPedidoRestaurante) {
+	public void setIdComandaRestaurante(Integer idComandaRestaurante) {
 		this.idComandaRestaurante = idComandaRestaurante;
 	}
 	
-	public void setIdMesa(Integer idmesa) {
+	public void setIdMesa(Integer idMesa) {
 		this.idMesa = idMesa;
 	}
 	
@@ -96,12 +104,20 @@ public class ComandaCocina {
 		this.horaEntrada = horaEntrada;
 	}
 	
-	public void setEstadoComanda( EstadoComanda estado) {
+	public void setEstado( EstadoComanda estado) {
 		this.estado = estado;
 	}
 	
-	public void setPrioridadComanda(PrioridadComanda prioridad) {
+	public void setPrioridad(PrioridadComanda prioridad) {
 		this.prioridad = prioridad;
+	}
+	
+	public String getNotas() {
+		return notas;
+	}
+	
+	public void setNotas(String notas) {
+		this.notas = notas;
 	}
 	
 }
