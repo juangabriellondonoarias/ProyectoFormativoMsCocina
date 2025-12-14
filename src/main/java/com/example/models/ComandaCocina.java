@@ -1,7 +1,6 @@
 package com.example.models;
 
 import java.time.LocalDateTime;   
-
 import org.hibernate.annotations.CreationTimestamp;
 
 import jakarta.persistence.Column;
@@ -12,11 +11,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import com.example.models.EstadoComanda;     
-import com.example.models.PrioridadComanda;
 
 @Entity
-
 @Table(name = "COMANDA_COCINA")
 public class ComandaCocina {
 	
@@ -31,16 +27,12 @@ public class ComandaCocina {
 	@Column(name = "id_mesa" , nullable = false)
 	private Integer idMesa;
 	
-	
-	
-	 /*mapeo del datetime*/
-	
+	/* mapeo del datetime */
 	@CreationTimestamp
 	@Column(name = "hora_entrada" , nullable = false , updatable = false)
 	private LocalDateTime horaEntrada;
 	
-	/*mapeo del enum estado*/
-	/* Mapeo del ENUM ESTADO  */
+	/* Mapeo del ENUM ESTADO */
     @Enumerated(EnumType.STRING)
     @Column(name = "estado", nullable = false)
     private EstadoComanda estado = EstadoComanda.EN_ESPERA; 
@@ -49,19 +41,16 @@ public class ComandaCocina {
 	@Enumerated(EnumType.STRING)
 	@Column(name = "prioridad" , nullable = false) 
 	private PrioridadComanda prioridad = PrioridadComanda.MEDIA;
-	
-	
-	@Column(name = "notas" , length = 200)
-	private String notas;
-	
-	
-	/*conatructor*/
-	
+    
+    /* Campo para notas/comentarios */
+    @Column(name = "notas", length = 500) // Se aumentó la longitud para notas
+    private String notas;
+
+	/* constructor */
 	public ComandaCocina() {
-		
 	}
 	
-	/*get y set*/
+	/* get y set */
 	
 	public Integer getIdComandaCocina() {
 		return idComandaCocina;
@@ -69,7 +58,6 @@ public class ComandaCocina {
 	
 	public Integer getIdComandaRestaurante() {
 		return idComandaRestaurante;
-		
 	}
 	
 	public Integer getIdMesa () { 
@@ -87,12 +75,16 @@ public class ComandaCocina {
 	public PrioridadComanda getPrioridad () {
 		return prioridad;
 	}
+    
+    public String getNotas() {
+        return notas;
+    }
 	
 	public void setIdComandaCocina (Integer idComandaCocina) {
 		this.idComandaCocina = idComandaCocina;
 	}
 	
-	public void setIdComandaRestaurante(Integer idComandaRestaurante) {
+	public void setIdComandaRestaurante(Integer idComandaRestaurante) { // Corregido: se asume que este era el setter correcto
 		this.idComandaRestaurante = idComandaRestaurante;
 	}
 	
@@ -111,13 +103,8 @@ public class ComandaCocina {
 	public void setPrioridad(PrioridadComanda prioridad) {
 		this.prioridad = prioridad;
 	}
-	
-	public String getNotas() {
-		return notas;
-	}
-	
-	public void setNotas(String notas) {
-		this.notas = notas;
-	}
-	
+
+    public void setNotas(String notas) { // Importante: setter de notas
+        this.notas = notas;
+    }
 }

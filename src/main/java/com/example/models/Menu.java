@@ -1,77 +1,66 @@
 package com.example.models;
 
-import jakarta.persistence.Column; 
-import jakarta.persistence.Entity;  
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
-
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-
 @Entity
-
-/*@Table  nos permite tambien crear la tabla con el nombre que deseamos 
- * ej: @Table(name= "tbl_menu")*/
-
-@Table(name= "MENU_2")
-
+@Table(name = "MENU")
 public class Menu {
 	
 	@Id
-
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_menu")
 	private Integer idmenu;
+	
+	@Column(name = "nombre", nullable = false, length = 100)
+	private String nombre;
+	
+	@Column(name = "precio_unitario", nullable = false)
+	private Double precio_unitario;
+	
+	@Column(name = "activo", nullable = false)
+	private Boolean activo = true;
 
-	@Column(unique = true)
-	private String  nombre;
-	
-	private Integer precio_unitario;
-	
-	private boolean activo = true ;
-	
-	//constructor vacio
+	/* constructor */
 	public Menu() {
-        
-    }
+		
+	}
 	
-	// get y set
+	/* get y set */
 
+	public Integer getIdmenu() {
+		return idmenu;
+	}
 
 	public void setIdmenu(Integer idmenu) {
-        this.idmenu = idmenu;
-    }
-	
-    public void setPrecio_unitario(Integer precio_unitario) {
-        this.precio_unitario = precio_unitario;
-    }
+		this.idmenu = idmenu;
+	}
 
-   
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-    
-    public void setActivo(boolean activo) {
-        this.activo = activo;
-    }
+	public String getNombre() {
+		return nombre;
+	}
 
-    
-    public Integer getIdmenu() {
-        return idmenu;
-    }
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
 
-    public String getNombre() {
-        return nombre;
-    }
+	public Double getPrecio_unitario() {
+		return precio_unitario;
+	}
 
-    public Integer getPrecio_unitario() {
-        return precio_unitario;
-    }
-    
-    public boolean isActivo() {
-        return activo;
-    }
-	
+	public void setPrecio_unitario(Double precio_unitario) {
+		this.precio_unitario = precio_unitario;
+	}
+
+	public Boolean getActivo() {
+		return activo;
+	}
+
+	public void setActivo(Boolean activo) {
+		this.activo = activo;
+	}
 }
-

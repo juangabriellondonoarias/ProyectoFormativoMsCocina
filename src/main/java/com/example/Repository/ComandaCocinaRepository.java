@@ -5,7 +5,6 @@ import org.springframework.stereotype.Repository;
 import com.example.models.ComandaCocina;
 
 @Repository
-
-public interface ComandaCocinaRepository extends JpaRepository<ComandaCocina , Integer> {
-
+public interface ComandaCocinaRepository extends JpaRepository<ComandaCocina, Integer> {
+    
 }

@@ -1,8 +1,8 @@
 package com.example.models;
 
 public enum PrioridadComanda {
-
 	BAJA,
-	MEDIA,
-	ALTA
+    MEDIA,
+    ALTA,
+    URGENTE
 }

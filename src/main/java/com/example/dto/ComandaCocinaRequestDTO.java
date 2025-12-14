@@ -4,26 +4,20 @@ import com.example.models.EstadoComanda;
 import com.example.models.PrioridadComanda;
 
 public class ComandaCocinaRequestDTO {
-
-	
-	private Integer idComandaRestaurante;
+    
+    private Integer idComandaRestaurante;
     private Integer idMesa;
     
-    // Se pueden omitir la horaEntrada aquí ya que JPA la gestiona con @CreationTimestamp
-    
-    // Estado y Prioridad pueden ser modificados
     private EstadoComanda estado; 
     private PrioridadComanda prioridad;
     
     private String notas;
 
-  
-/*constructor*/
-
+    /* Constructor */
     public ComandaCocinaRequestDTO() {
     }
 
-   /*get y set*/
+    /* Getters y Setters */
     
     public Integer getIdComandaRestaurante() {
         return idComandaRestaurante;
