@@ -58,7 +58,7 @@ public class DetalleComandaCocinaController {
 		return ResponseEntity.noContent().build();
 	}
 	
-    @Operation(summary = "Actualización parcial de Cantidad (PATCH)", description = "Actualiza solo la 'cantidad' de un ítem. Espera un JSON: {\"cantidad\": 3}.")
+    @Operation(summary = "Actualización parcial de Cantidad ", description = "Actualiza solo la 'cantidad' de un ítem. Espera un JSON: {\"cantidad\": 3}.")
 	@RequestMapping(value = "/{id}/cantidad", method = RequestMethod.PATCH)
 	public ResponseEntity<DetalleComandaCocina> actualizarCantidad(@PathVariable Integer id, @RequestBody Map<String, Integer> body) {
 	    Integer cantidad = body.get("cantidad");

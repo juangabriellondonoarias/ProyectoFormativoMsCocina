@@ -1,8 +1,12 @@
 package com.example.controller;
 
-import java.util.List;   
+import java.util.List; 
+import java.util.Map;
+
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -12,6 +16,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.example.models.DetalleMenu;
 import com.example.service.DetalleMenuService;
@@ -54,4 +59,24 @@ public class DetalleMenuController {
 		detalleMenuService.deleteById(id);
 		return ResponseEntity.noContent().build();
 	}
+    
+    /*actualizar imagen*/
+    
+    @Operation(summary = "Actualización parcial de Imagen ", description = "Actualiza solo la URL de la imagen de un detalle de menú. Espera un JSON: {\"imagenUrl\": \"nueva_url_aqui\"}.")
+    @RequestMapping(value = "/{id}/imagen", method = RequestMethod.PATCH)
+    public ResponseEntity<DetalleMenu> actualizarImagen(@PathVariable Integer id, @RequestBody Map<String, String> body) {
+        String nuevaUrl = body.get("imagenUrl");
+        
+        if (!body.containsKey("imagenUrl")) {
+            return ResponseEntity.badRequest().build();
+        }
+        
+        DetalleMenu detalleActualizado = detalleMenuService.actualizarImagenUrl(id, nuevaUrl);
+
+        if (detalleActualizado != null) {
+            return ResponseEntity.ok(detalleActualizado);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
 }

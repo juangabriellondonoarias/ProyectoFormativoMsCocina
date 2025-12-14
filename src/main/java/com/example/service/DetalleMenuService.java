@@ -40,4 +40,15 @@ public class DetalleMenuService {
 		detalleMenuRepository.deleteById(id);
 	}
 	
+	
+	
+	
+	@Transactional
+    public DetalleMenu actualizarImagenUrl(Integer id, String nuevaUrl) {
+        return detalleMenuRepository.findById(id).map(detalle -> {
+            detalle.setImagenUrl(nuevaUrl);
+            return detalleMenuRepository.save(detalle);
+        }).orElse(null);
+    }
+	
 }
