@@ -73,7 +73,7 @@ public ResponseEntity<Void>eliminarComanda(@PathVariable Integer id){
 
 
 /*actualizar*/
-@Operation(summary = "Actualiza el estado ", description = "Actualiza el estado")
+@Operation(summary = "Actualiza el estado  ", description = "Actualiza el estado")
 @RequestMapping(value = "/{id}/estado", method = RequestMethod.PATCH) 
 public ResponseEntity<ComandaCocina> actualizarEstado(@PathVariable Integer id, @RequestBody Map<String, String> body) {
     try {
