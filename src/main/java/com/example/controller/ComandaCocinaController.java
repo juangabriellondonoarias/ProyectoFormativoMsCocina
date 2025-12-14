@@ -73,7 +73,7 @@ public ResponseEntity<Void>eliminarComanda(@PathVariable Integer id){
 
 
 /*actualizar*/
-
+@Operation(summary = "Actualiza el estado ", description = "Actualiza el estado")
 @RequestMapping(value = "/{id}/estado", method = RequestMethod.PATCH) 
 public ResponseEntity<ComandaCocina> actualizarEstado(@PathVariable Integer id, @RequestBody Map<String, String> body) {
     try {
@@ -100,7 +100,7 @@ public ResponseEntity<ComandaCocina> actualizarEstado(@PathVariable Integer id, 
 }
 
 
-@Operation(summary = "Actualización parcial de Notas (PATCH)", description = "Actualiza solo las 'notas' o comentarios de una comanda específica. Espera un JSON con la clave 'notas'.")
+@Operation(summary = "Actualización parcial de Notas ", description = "Actualiza solo las 'notas' ")
 @RequestMapping(value = "/{id}/notas", method = RequestMethod.PATCH)
 public ResponseEntity<ComandaCocina> actualizarNotas(@PathVariable Integer id, @RequestBody Map<String, String> body) {
     String notas = body.get("notas"); 

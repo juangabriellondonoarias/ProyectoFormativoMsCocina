@@ -70,7 +70,7 @@ public class MenuController {
 		return menuService.findById(idmenu);
 	}
 	
-    @Operation(summary = "Actualización total (PUT)", description = "Reemplaza completamente un plato existente. Se debe enviar el DTO completo.")
+    @Operation(summary = "Actualización total", description = "Reemplaza completamente un plato existente. Se debe enviar el DTO completo.")
     @PutMapping("/{idmenu}")
     public ResponseEntity<Menu> actualizarMenu(@PathVariable("idmenu") Integer idmenu, @RequestBody MenuRequestDTO menuDto) {
         
@@ -89,7 +89,9 @@ public class MenuController {
         }
     }
 
-    @Operation(summary = "Actualización parcial de Nombre (PATCH)", description = "Actualiza solo el nombre del plato. Espera un JSON: {\"nombre\": \"Nuevo Nombre\"}.")
+    /*actualizar*/
+    
+    @Operation(summary = "Actualización parcial de Nombre ", description = "Actualiza solo el nombre del plato. Espera un JSON: {\"nombre\": \"Nuevo Nombre\"}.")
 	@RequestMapping(value = "/{idmenu}/nombre", method = RequestMethod.PATCH)
 	public ResponseEntity<Menu> actualizarNombre(@PathVariable("idmenu") Integer idmenu, @RequestBody Map<String, String> body) {
 	    String nombre = body.get("nombre");
@@ -107,7 +109,7 @@ public class MenuController {
 	    }
 	}
     
-    @Operation(summary = "Actualización parcial de Precio (PATCH)", description = "Actualiza solo el precio unitario. Espera un JSON: {\"precio_unitario\": 12.50}.")
+    @Operation(summary = "Actualización parcial de Precio", description = "Actualiza solo el precio unitario. Espera un JSON: {\"precio_unitario\": 12.50}.")
 	@RequestMapping(value = "/{idmenu}/precio", method = RequestMethod.PATCH)
 	public ResponseEntity<Menu> actualizarPrecio(@PathVariable("idmenu") Integer idmenu, @RequestBody Map<String, Double> body) {
 	    Double precio = body.get("precio_unitario");
@@ -125,7 +127,7 @@ public class MenuController {
 	    }
 	}
 	
-    @Operation(summary = "Actualización parcial de Activo (PATCH)", description = "Actualiza solo el estado activo/inactivo. Espera un JSON: {\"activo\": false}.")
+    @Operation(summary = "Actualización parcial de Activo", description = "Actualiza solo el estado activo/inactivo. Espera un JSON: {\"activo\": false}.")
 	@RequestMapping(value = "/{idmenu}/activo", method = RequestMethod.PATCH)
 	public ResponseEntity<Menu> actualizarActivo(@PathVariable("idmenu") Integer idmenu, @RequestBody Map<String, Boolean> body) {
 	    Boolean activo = body.get("activo");
