@@ -1,6 +1,7 @@
 package com.example.demo.models;
 
 import jakarta.persistence.Column;
+import lombok.EqualsAndHashCode;
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
@@ -9,6 +10,7 @@ import java.io.Serializable;
 
 @NoArgsConstructor
 @AllArgsConstructor
+@EqualsAndHashCode
 @Embeddable
 public class RecetaIngredientePK implements Serializable {
 

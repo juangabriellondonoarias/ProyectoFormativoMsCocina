@@ -1,15 +1,17 @@
-package com.example.service;
+package com.example.demo.service.impl;
 
 import java.util.List;  
 
 import javax.swing.plaf.basic.BasicComboBoxUI.ListDataHandler;
-import com.example.models.EstadoComanda;
+
+import com.example.demo.models.ComandaCocina;
+import com.example.demo.models.EstadoComanda;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.example.models.ComandaCocina;
-import com.example.repository.ComandaCocinaRepository;
+import com.example.demo.repository.ComandaCocinaRepository;
 
 //import jakarta.transaction.TransactionScoped;
 

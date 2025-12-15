@@ -1,4 +1,4 @@
-package com.example.models;
+package com.example.demo.models;
 
  
 //import com.example.models.Receta; 
@@ -32,13 +32,13 @@ public class DetalleMenu {
 
  
  /*relacion con la receta (comentada)*/
- // @ManyToOne(fetch = FetchType.EAGER)
- // @JoinColumn(name = "id_receta", nullable = false)
- // private Receta receta;
+ 	@ManyToOne(fetch = FetchType.EAGER)
+ 	@JoinColumn(name = "id_receta", nullable = false)
+ 	private Receta receta;
      
- /*Campo auxiliar para la FK id_receta (Este sí se mapea por ahora)*/
+ /*Campo auxiliar para la FK id_receta (Este sí se mapea por ahora)
  @Column(name = "id_receta" , nullable = false)
- private Integer idReceta; 
+ private Integer idReceta; */
 
  /*constructor */
  public DetalleMenu() {
@@ -72,11 +72,11 @@ public class DetalleMenu {
      this.imagenUrl = imagenUrl;
  }
  
- public Integer getIdReceta() {
-     return idReceta;
+ public Receta getReceta() {
+     return receta;
  }
 
- public void setIdReceta(Integer idReceta) {
-     this.idReceta = idReceta;
+ public void setReceta(Receta receta) {
+     this.receta = receta;
  }
 }

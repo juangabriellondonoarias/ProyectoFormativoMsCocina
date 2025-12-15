@@ -1,12 +1,13 @@
-package com.example.service;
+package com.example.demo.service.impl;
 
 import java.util.List; 
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import com.example.repository.DetalleMenuRepository;
-import com.example.models.DetalleMenu;
+
+import com.example.demo.models.DetalleMenu;
+import com.example.demo.repository.DetalleMenuRepository;
 
 
 @Service

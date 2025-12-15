@@ -1,4 +1,4 @@
-package com.example.controller;
+package com.example.demo.controller;
 
 import java.util.List; 
 import java.util.Map;
@@ -18,8 +18,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.example.models.DetalleMenu;
-import com.example.service.DetalleMenuService;
+import com.example.demo.models.DetalleMenu;
+import com.example.demo.service.impl.DetalleMenuService;
 
 
 @RestController
