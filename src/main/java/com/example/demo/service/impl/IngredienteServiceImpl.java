@@ -47,6 +47,18 @@ public class IngredienteServiceImpl implements IngredienteService {
         Ingrediente actualizado = repositorio.save(ingrediente);
         return mapearADTO(actualizado);
     }
+    
+    @Override
+    public IngredienteDTO actualizarStock(Integer id, int nuevaCantidad) {
+        Ingrediente ingrediente = repositorio.findById(id)
+                .orElseThrow(() -> new RuntimeException("Ingrediente no encontrado"));
+        
+        // Solo actualizamos la cantidad, lo demás queda igual
+        ingrediente.setCantidad(nuevaCantidad);
+        
+        Ingrediente guardado = repositorio.save(ingrediente);
+        return mapearADTO(guardado);
+    }
 
     @Override
     public void eliminar(Integer id) {

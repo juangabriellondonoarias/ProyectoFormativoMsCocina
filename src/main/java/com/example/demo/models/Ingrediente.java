@@ -1,5 +1,7 @@
 package com.example.demo.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -18,6 +20,8 @@ public class Ingrediente {
 
     @Column(name = "unidad_medida_stock", length = 20)
     private String unidadMedidaStock;
+    
+
     
     public Integer getIdIngrediente() {
         return idIngrediente;

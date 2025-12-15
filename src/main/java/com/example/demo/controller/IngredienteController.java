@@ -74,4 +74,18 @@ public class IngredienteController {
         servicio.eliminar(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
+    
+    @PatchMapping("/{id}/stock")
+    @Operation(summary = "Actualizar Stock", description = "Actualiza solo la cantidad disponible de un ingrediente.")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "204", description = "Stock de Ingrediente Atualizado Correctamente."),
+            @ApiResponse(responseCode = "404", description = "Stock de Ingrediente no encontrado")
+    })
+    public ResponseEntity<IngredienteDTO> actualizarStock(
+            @PathVariable Integer id, 
+            @RequestParam int cantidad) {
+        
+        IngredienteDTO actualizado = servicio.actualizarStock(id, cantidad);
+        return new ResponseEntity<>(actualizado, HttpStatus.OK);
+    }
 }

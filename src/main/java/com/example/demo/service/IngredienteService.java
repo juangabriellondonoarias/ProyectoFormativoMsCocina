@@ -7,5 +7,6 @@ public interface IngredienteService {
     IngredienteDTO obtenerPorId(Integer id);
     IngredienteDTO guardar(IngredienteDTO ingredienteDTO);
     IngredienteDTO actualizar(Integer id, IngredienteDTO ingredienteDTO);
+    IngredienteDTO actualizarStock(Integer id, int nuevaCantidad);
     void eliminar(Integer id);
 }
