@@ -1,4 +1,4 @@
-package com.example.models;
+package com.example.demo.models;
 
 public enum EstadoComanda {
     EN_ESPERA,

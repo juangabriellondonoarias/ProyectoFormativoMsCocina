@@ -1,8 +1,9 @@
-package com.example.repository;
+package com.example.demo.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import com.example.models.DetalleMenu;
+
+import com.example.demo.models.DetalleMenu;
 
 @Repository
 public interface DetalleMenuRepository extends JpaRepository<DetalleMenu, Integer> {

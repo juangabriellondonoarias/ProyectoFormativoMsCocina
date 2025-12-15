@@ -1,7 +1,7 @@
-package com.example.service;
+package com.example.demo.service.impl;
 
-import com.example.models.Menu;  
-import com.example.repository.MenuRepository;
+import com.example.demo.models.Menu;
+import com.example.demo.repository.MenuRepository;
 
 import java.lang.reflect.Method;
 import java.util.List;

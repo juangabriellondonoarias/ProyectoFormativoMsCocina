@@ -1,9 +1,9 @@
-package com.example.controller;
+package com.example.demo.controller;
 
 import java.util.List;   
 import java.util.Optional;
 import java.util.Map;
-import com.example.dto.MenuRequestDTO;
+
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 
@@ -19,8 +19,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.models.Menu;
-import com.example.service.MenuService;
+import com.example.demo.dto.MenuRequestDTO;
+import com.example.demo.models.Menu;
+import com.example.demo.service.impl.MenuService;
 
 
 

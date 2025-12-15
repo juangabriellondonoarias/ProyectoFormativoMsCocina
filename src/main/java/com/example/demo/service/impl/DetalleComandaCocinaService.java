@@ -1,4 +1,4 @@
-package com.example.service;
+package com.example.demo.service.impl;
 
 import java.util.List; 
 
@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.example.models.DetalleComandaCocina;
-import com.example.repository.DetalleComandaCocinaRepository;
+import com.example.demo.models.DetalleComandaCocina;
+import com.example.demo.repository.DetalleComandaCocinaRepository;
 
 @Service
 public class DetalleComandaCocinaService {

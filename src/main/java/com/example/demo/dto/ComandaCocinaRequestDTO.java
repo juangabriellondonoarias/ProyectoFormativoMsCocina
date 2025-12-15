@@ -1,7 +1,7 @@
-package com.example.dto;
+package com.example.demo.dto;
 
-import com.example.models.EstadoComanda;
-import com.example.models.PrioridadComanda;
+import com.example.demo.models.EstadoComanda;
+import com.example.demo.models.PrioridadComanda;
 
 public class ComandaCocinaRequestDTO {
     

@@ -1,4 +1,4 @@
-package com.example.controller;
+package com.example.demo.controller;
 
 import java.util.List;  
 import java.util.Map;
@@ -16,10 +16,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.models.ComandaCocina;
-import com.example.service.ComandaCocinaService;
-import com.example.models.EstadoComanda;
-
+import com.example.demo.models.ComandaCocina;
+import com.example.demo.models.EstadoComanda;
+import com.example.demo.service.impl.ComandaCocinaService;
 
 /*import de swagger*/
 import io.swagger.v3.oas.annotations.Operation;
