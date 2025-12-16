@@ -1,0 +1,56 @@
+version: '3.8'
+
+services:
+  # Servicio 1: Tu aplicación Spring Boot
+  ms-cocina-app:
+    container_name: ms-cocina-container
+    build: .
+    ports:
+      - "8090:8083" # Puerto Host : Puerto Contenedor
+    depends_on:
+      - mysqldb
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysqldb:3306/Modulo_Cocina?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: JUAN1003
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+    networks:
+      - cocina-network
+
+  # Servicio 2: Base de Datos MySQL
+  mysqldb:
+    image: mysql:8.0
+    container_name: mysql-cocina-container
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: JUAN1003
+      MYSQL_DATABASE: Modulo_Cocina
+    ports:
+      - "3310:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - cocina-network
+
+  # Servicio 3: phpMyAdmin
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin-cocina
+    restart: always
+    depends_on:
+      - mysqldb
+    ports:
+      - "9090:80"
+    environment:
+      PMA_HOST: mysqldb
+      PMA_PORT: 3306
+      PMA_USER: root
+      PMA_PASSWORD: JUAN1003
+    networks:
+      - cocina-network
+
+volumes:
+  mysql-data:
+
+networks:
+  cocina-network:
